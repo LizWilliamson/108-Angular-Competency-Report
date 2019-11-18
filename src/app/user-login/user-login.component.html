@@ -1,0 +1,48 @@
+<form action="">
+  <div class="row">
+
+    <div class="form col col-6 offset-3 login form">
+
+      <h2>Log In to My Super System</h2>
+      <div *ngIf="loginFailed" class="alert alert-danger">It appears somebody doesn't know their name and/or
+        password. HaHaHa fool. Try Again!!!</div>
+
+      <div class="form-group">
+
+        <label class="col-3 col-form-label">User Name</label>
+
+        <div class="col-9">
+          <input type="email" [(ngModel)]="userName" name="userName" (ngModelChange)="userChanged()" class="form-control" placeholder="Please Enter Your Super Secret User Name Here">
+
+              <small>We'll never share your user name with anyone else. Or we will. We operate by the bottom dollar 'round these here parts. And the bottom dollar speaks loudly when the bills need to be paid.</small>
+              
+              <div *ngIf="userNameError" class="alert alert-danger">
+                      So, ummm, this is kind of awkward, but did you forget your name? It's that thing people call you on the daily. Well, no, that might not be true. Especially if you aren't an entirely nice person. So, try the name on your Driver's License. Or your parole paperwork. Maybe the name on your W-2. *shrug* I dunno, but we aren't going any further until you put something up there.</div>   
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-3 col-form-label">Password</label>
+        <div class="col-9">
+        <input type="password" [(ngModel)]="password" name="incorrectPassword" (ngModelChange)="passwordChanged()" class="form-control"
+        placeholder="Please Enter Your Super Secret Password Here">
+        <small id="emailHelp "class="form-text text-muted ">Our intentions are to NEVER share your password with anyone, but, well, shit happens. If it does indeed happen, we're sorry. You'll forgive us, right? We can be besties again? </small>
+        <div *ngIf="passwordError" class="alert alert-danger">Hey dum dum, that ain't your password. Try Again!</div>
+          
+      </div>
+      </div>
+      <button (click)="login()" class="btn btn-primary">Hit Me Baby, Just One Time</button>
+
+
+
+    </div>
+
+
+
+
+    
+  </div>
+
+</form>
+
+
